@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes_projet_FW/trigger_full_V01.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Area2D" type="Area2D" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+if_node = null
+do_enter = false
+so_die_enter = null
+so_hide_enter = null
+so_show_enter = null
+so_instance_enter = null
+so_in_instance_enter = null
+so_loadScene_enter = null
+so_playSound_enter = null
+so_killOwn_enter = null
+do_extire = false
+so_die_extire = null
+so_hide_extire = null
+so_show_extire = null
+so_instance_extire = null
+so_in_instance_extire = null
+so_loadScene_extire = null
+so_playSound_extire = null
+so_killOwn_extire = null
+do_button = false
+only_on_trigger_shape = false
+do_press_controll = ""
+so_die_button = null
+so_hide_button = null
+so_show_button = null
+so_instance_button = null
+so_in_instance_button = null
+so_loadScene_button = null
+so_playSound_button = null
+so_killOwn_button = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+

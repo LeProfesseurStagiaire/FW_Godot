@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes_projet_FW/moving_platform.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32.9997, 8.89552 )
+
+[node name="moving_platform" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+motion = Vector2( 0, 0 )
+motion_speed = 0.0
+rotation_speed = 0.0
+rotation_side = null
+
+[node name="platform" type="RigidBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="Sprite" type="Sprite" parent="platform" index="0"]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="platform" index="1"]
+
+shape = SubResource( 2 )
+
+

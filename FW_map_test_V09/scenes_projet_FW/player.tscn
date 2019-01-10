@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes_projet_FW/player.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.9231, 8.09386 )
+
+[node name="player" type="RigidBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 2
+mass = 23.8927
+friction = 0.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = true
+continuous_cd = 0
+contacts_reported = 3
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+move_left_control = "ui_left"
+move_right_control = "ui_right"
+move_jump_control = "ui_up"
+WALK_ACCELLERATION = 500
+WALK_DEACCELLERATION = 10000
+WALK_MAX_SPEED = 12000
+AIR_ACCEL = 200.0
+AIR_DEACCEL = 200.0
+JUMP_VELOCITY = 350
+FALLING_FORCE = 20
+dead_instanced_scene = null
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -0.0414963, -0.0668828 )
+shape = SubResource( 1 )
+
+[node name="camera" type="Camera2D" parent="." index="2"]
+
+position = Vector2( 5.41014, 0.111576 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_top = 0
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+

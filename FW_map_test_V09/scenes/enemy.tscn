@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes_projet_FW/enemy.gd" type="Script" id=1]
+[ext_resource path="res://img/princess.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 7.70501
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 2
+mass = 1.0
+friction = 0.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 4
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+stay_on_plateform = true
+rc_left_path = NodePath("Left")
+rc_right_path = NodePath("Right")
+enemi_main_sprite = NodePath("Sprite")
+WALK_SPEED = 50
+direction = null
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Left" type="RayCast2D" parent="." index="2"]
+
+position = Vector2( -10.1081, -32.1192 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 45 )
+collision_mask = 1
+
+[node name="Right" type="RayCast2D" parent="." index="3"]
+
+position = Vector2( 10.5805, -32.4972 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 45 )
+collision_mask = 1
+
+

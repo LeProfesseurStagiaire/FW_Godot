@@ -1,0 +1,9 @@
+PLAYER : 
+A life and dead system with HP, checkpoint, list of action to read when die.
+Make a new physic system to have new custom possibilities.
+
+TRIGGER : 
+Add teleport parameter, which change the x and y Node position.
+Add eachTime function, which are read each x time, many other parameters can be modified.
+Add a Node variable modifier parameter, which are able to change global and local variable.
+

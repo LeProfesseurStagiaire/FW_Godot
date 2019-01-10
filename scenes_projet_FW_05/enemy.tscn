@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes_projet_FW/enemy.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 7.94782
+
+[node name="enemy" type="RigidBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 2
+mass = 1.0
+friction = 0.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 4
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+stay_on_plateform = true
+rc_left_path = NodePath("raycast_left")
+rc_right_path = NodePath("raycast_right")
+WALK_SPEED = 50
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( -0.427193, -0.427187 )
+region_rect = Rect2( 0, 0, 1, 8 )
+_sections_unfolded = [ "Animation", "Region" ]
+
+[node name="shape3" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -0.316946, -0.399576 )
+shape = SubResource( 1 )
+
+[node name="raycast_left" type="RayCast2D" parent="." index="2"]
+
+position = Vector2( -33.2868, -9.34363 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 45 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="raycast_right" type="RayCast2D" parent="." index="3"]
+
+position = Vector2( 29.1987, -9.34363 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 45 )
+collision_mask = 1
+
+
